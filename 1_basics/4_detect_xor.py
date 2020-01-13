@@ -1,4 +1,5 @@
 import importlib
+
 single_byte_xor = importlib.import_module("3_single_byte_xor")
 
 
@@ -27,7 +28,7 @@ def get_best_string(hex_strings):
 
 
 def main():
-    f = open('4.txt', 'r');
+    f = open('4.txt', 'r')
     hex_strings = f.read().splitlines()
     print(get_best_string(hex_strings))
 

@@ -1,5 +1,6 @@
-from Crypto.Cipher import AES
 import base64
+
+from Crypto.Cipher import AES
 
 
 def xor_with_key(input_string, key):

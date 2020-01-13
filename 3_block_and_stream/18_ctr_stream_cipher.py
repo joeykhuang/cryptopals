@@ -10,7 +10,7 @@ def little_endian(number, num_bits):
     return bytearray.fromhex(hex(number)[2:].zfill(num_bits // 4))[::-1]
 
 
-def ctr_mode(text, key, nonce):
+def ctr_mode(text, key, nonce=(b'\x00' * 8)):
     text_blocks = [text[i:i + 16] for i in range(0, len(text), 16)]
     altered_text = b''
     mode = AES.MODE_ECB

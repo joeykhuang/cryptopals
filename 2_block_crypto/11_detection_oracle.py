@@ -13,7 +13,8 @@ def encryption_oracle(plaintext):
     plaintext_length = len(plaintext)
     pad_length = 16 - (plaintext_length % 16)
     before_pad = generate_random_bytes(random.randint(5, 10))
-    after_pad_length = 16 + (pad_length - len(before_pad)) if (pad_length - len(before_pad)) < 0 else (pad_length - len(before_pad))
+    after_pad_length = 16 + (pad_length - len(before_pad)) if (pad_length - len(before_pad)) < 0 else (
+            pad_length - len(before_pad))
     after_pad = generate_random_bytes(after_pad_length)
     plaintext = before_pad + plaintext + after_pad
     ecb_or_cbc = random.randint(0, 1)
@@ -38,7 +39,7 @@ def main():
             encrypted_method = detect_encryption_oracle(encrypted_text)
             if real_encryption_method == encrypted_method:
                 correct_count += 1
-        print(i, correct_count/1000)
+        print(i, correct_count / 1000)
 
 
 if __name__ == '__main__':

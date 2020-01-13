@@ -1,5 +1,6 @@
-import pybase64
 import binascii
+
+import pybase64
 
 hexbytes = binascii.unhexlify(input())
 
